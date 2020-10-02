@@ -35,10 +35,10 @@
         window.onload = function () {
             set_info();
             // 画面に触れはじめたときのイベントに関数を登録
-            // document.body.addEventListener("touchstart", handle_touch);
+            document.body.addEventListener("touchstart", handle_touch);
             // 画面上で移動しているときのイベントに関数を登録
-            // document.body.addEventListener("touchmove", handle_touch);
-            // document.body.addEventListener("touchend", handle_touch);
+            document.body.addEventListener("touchmove", handle_touch);
+            document.body.addEventListener("touchend", handle_touch);
         };
 
         // set_info();
@@ -100,9 +100,8 @@
 </head>
 
 <body>
-    <script>handle_touch;</script>
 
-    <h1>Your touch device information 15</h1>
+    <h1>Your touch device information 16</h1>
 
     <div id="area">
         <div id="information-area"></div>
