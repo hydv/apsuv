@@ -16,11 +16,17 @@
             font-family: system-ui;
         }
 
-        html,
+
         body {
             width: 100%;
             height: 100%;
-            overscroll-behavior: none;
+            overflow: auto;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
     </style>
 
@@ -38,7 +44,7 @@
             e.textContent = key + "=[" + value + "]";
         }
 
-        // ブラウザ情報を表示する
+        ブラウザ情報を表示する
         function set_info() {
             const keys = [
                 "window.navigator.userAgent",
@@ -89,8 +95,10 @@
 
     <h1>Your touch device information 7</h1>
 
+
     <div id="area">
-        <div id="information-area"></div>
+        <div id="information-area"></div><br><br><br><br>
+
         <div id="touch-area"></div>
     </div>
 
