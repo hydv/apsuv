@@ -45,19 +45,19 @@
         }
 
         // ブラウザ情報を表示する
-        function set_info() {
-            const keys = [
-                "window.navigator.userAgent",
-                "window.navigator.maxTouchPoints",
-                "window.parent.screen.width",
-                "window.parent.screen.height",
-                "window.screen.width",
-                "window.screen.height",
-            ];
-            for (var key of keys) {
-                add("information-area", key, eval(key));
-            }
-        }
+        // function set_info() {
+        //     const keys = [
+        //         "window.navigator.userAgent",
+        //         "window.navigator.maxTouchPoints",
+        //         "window.parent.screen.width",
+        //         "window.parent.screen.height",
+        //         "window.screen.width",
+        //         "window.screen.height",
+        //     ];
+        //     for (var key of keys) {
+        //         add("information-area", key, eval(key));
+        //     }
+        // }
 
         // タッチデバイスの情報を表示する
         function handle_touch(event) {
@@ -93,7 +93,7 @@
 
 <body>
 
-    <h1>Your touch device information 4</h1>
+    <h1>Your touch device information 5</h1>
 
     <div id="area">
         <div id="information-area"></div>
