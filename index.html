@@ -60,9 +60,13 @@
                 for (var i = 0; i < event.touches.length; i++) {
                     var touch = event.touches.item(i);
                     // Touch.force: 圧力を0.0〜1.0の値で取得する
+                    add("touch-area", "Touch[" + i + "].touchType", touch.touchType);
                     add("touch-area", "Touch[" + i + "].force", touch.force);
                     add("touch-area", "Touch[" + i + "].clientX", touch.clientX);
                     add("touch-area", "Touch[" + i + "].clientY", touch.clientY);
+                    add("touch-area", "Touch[" + i + "].rotationAngle", touch.rotationAngle);
+                    add("touch-area", "Touch[" + i + "].altitudeAngle", touch.altitudeAngle);
+                    add("touch-area", "Touch[" + i + "].azimuthAngle", touch.azimuthAngle);
                 }
             } catch (e) {
                 add("touch-area", "error", e);
@@ -83,7 +87,7 @@
 
 <body>
 
-    <h1>Your touch device information 2</h1>
+    <h1>Your touch device information 3</h1>
 
     <div id="area">
         <div id="information-area"></div>
