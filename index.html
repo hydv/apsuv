@@ -32,14 +32,16 @@
 
     <script>
 
-        window.onload = function () {
-            set_info();
-            // 画面に触れはじめたときのイベントに関数を登録
-            document.body.addEventListener("touchstart", handle_touch);
-            // 画面上で移動しているときのイベントに関数を登録
-            document.body.addEventListener("touchmove", handle_touch);
-            document.body.addEventListener("touchend", handle_touch);
-        };
+        // window.onload = function () {
+        //     set_info();
+        //     // 画面に触れはじめたときのイベントに関数を登録
+        //     document.body.addEventListener("touchstart", handle_touch);
+        //     // 画面上で移動しているときのイベントに関数を登録
+        //     document.body.addEventListener("touchmove", handle_touch);
+        //     document.body.addEventListener("touchend", handle_touch);
+        // };
+
+        handle_touch;
 
         // 表示領域をクリアする
         function clear(id) {
@@ -77,8 +79,8 @@
                 // Touch.force: 圧力を0.0〜1.0の値で取得する
                 add("touch-area", "touchType", touch.touchType);
                 add("touch-area", "force", touch.force);
-                add("touch-area", "clientX", touch.clientX);
-                add("touch-area", "clientY", touch.clientY);
+                // add("touch-area", "clientX", touch.clientX);
+                // add("touch-area", "clientY", touch.clientY);
                 add("touch-area", "pageX", touch.pageX);
                 add("touch-area", "pageY", touch.pageY);
                 add("touch-area", "rotationAngle", touch.rotationAngle);
@@ -89,6 +91,8 @@
                 add("touch-area", "error", e);
             }
         }
+
+        setInterval(countup, 10);
 
     </script>
 
