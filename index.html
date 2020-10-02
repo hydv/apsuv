@@ -32,6 +32,15 @@
 
     <script>
 
+        window.onload = function () {
+            set_info();
+            // 画面に触れはじめたときのイベントに関数を登録
+            document.body.addEventListener("touchstart", handle_touch);
+            // 画面上で移動しているときのイベントに関数を登録
+            document.body.addEventListener("touchmove", handle_touch);
+            document.body.addEventListener("touchend", handle_touch);
+        };
+
         // 表示領域をクリアする
         function clear(id) {
             document.getElementById(id).textContent = "";
@@ -78,14 +87,6 @@
                 add("touch-area", "error", e);
             }
         }
-
-        window.onload = function () {
-            set_info();
-            // 画面に触れはじめたときのイベントに関数を登録
-            document.body.addEventListener("touchstart", handle_touch);
-            // 画面上で移動しているときのイベントに関数を登録
-            document.body.addEventListener("touchmove", handle_touch);
-        };
 
     </script>
 
