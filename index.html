@@ -38,7 +38,7 @@
             document.body.addEventListener("touchstart", handle_touch);
             // 画面上で移動しているときのイベントに関数を登録
             document.body.addEventListener("touchmove", handle_touch);
-            //document.body.addEventListener("touchend", handle_touch);
+            document.body.addEventListener("touchend", handle_touch);
         };
 
         // 表示領域をクリアする
@@ -50,7 +50,7 @@
         function add(id, key, value) {
             const e = document.createElement("div");
             document.getElementById(id).appendChild(e);
-            e.textContent = key + "=[" + value + "]";
+            e.textContent = key + " = [" + value + "]";
         }
 
         // ブラウザ情報を表示する
@@ -72,17 +72,19 @@
         function handle_touch(event) {
             clear("touch-area");
             try {
-                for (var i = 0; i < event.touches.length; i++) {
-                    var touch = event.touches.item(i);
-                    // Touch.force: 圧力を0.0〜1.0の値で取得する
-                    add("touch-area", "Touch[" + i + "].touchType", touch.touchType);
-                    add("touch-area", "Touch[" + i + "].force", touch.force);
-                    add("touch-area", "Touch[" + i + "].clientX", touch.clientX);
-                    add("touch-area", "Touch[" + i + "].clientY", touch.clientY);
-                    add("touch-area", "Touch[" + i + "].rotationAngle", touch.rotationAngle);
-                    add("touch-area", "Touch[" + i + "].altitudeAngle", touch.altitudeAngle);
-                    add("touch-area", "Touch[" + i + "].azimuthAngle", touch.azimuthAngle);
-                }
+                //for (var i = 0; i < event.touches.length; i++) {
+                var touch = event.touches.item(0);
+                // Touch.force: 圧力を0.0〜1.0の値で取得する
+                add("touch-area", "touchType", touch.touchType);
+                add("touch-area", "force", touch.force);
+                add("touch-area", "clientX", touch.clientX);
+                add("touch-area", "clientY", touch.clientY);
+                add("touch-area", "pageX", touch.pageX);
+                add("touch-area", "pageY", touch.pageY);
+                add("touch-area", "rotationAngle", touch.rotationAngle);
+                add("touch-area", "altitudeAngle", touch.altitudeAngle);
+                add("touch-area", "azimuthAngle", touch.azimuthAngle);
+                //}
             } catch (e) {
                 add("touch-area", "error", e);
             }
@@ -94,7 +96,7 @@
 
 <body>
 
-    <h1>Your touch device information 9</h1>
+    <h1>Your touch device information 10</h1>
 
     <div id="area">
         <div id="information-area"></div>
